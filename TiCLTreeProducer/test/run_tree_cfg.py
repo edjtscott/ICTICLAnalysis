@@ -59,6 +59,8 @@ process.source = cms.Source(
     fileNames = cms.untracked.vstring(options.inputFiles)
 )
 
+process.source.duplicateCheckMode = cms.untracked.string('noDuplicateCheck') ## FIXME
+
 process.load('SimCalorimetry.HGCalSimProducers.hgcHitAssociation_cfi')
 process.load('SimCalorimetry.HGCalAssociatorProducers.LCToSCAssociation_cfi')
 process.load('RecoLocalCalo.HGCalRecProducers.hgcalRecHitMapProducer_cfi')
@@ -73,30 +75,31 @@ process.ticlTree.FillTripletsInfo = cms.int32(options.fillTriplets)
 process.ticlTree.Debug = cms.int32(options.debug)
 process.ticlTree.trksterVec          = cms.VInputTag(
     #cms.InputTag("ticlSimTracksters"  ,  "", "RECO"),
-    cms.InputTag("ticlTrackstersDummy1"    , ""                 , "TICL" ),
-    cms.InputTag("ticlTrackstersDummy2"    , ""                 , "TICL" ),
-    cms.InputTag("ticlTrackstersDummy3"    , ""                 , "TICL" ),
-    cms.InputTag("ticlTrackstersEM1"       , ""                 , "TICL" ),
-    cms.InputTag("ticlTrackstersEM2"       , ""                 , "TICL" ),
+    #cms.InputTag("ticlTrackstersDummy1"    , ""                 , "TICL" ),
+    #cms.InputTag("ticlTrackstersDummy2"    , ""                 , "TICL" ),
+    #cms.InputTag("ticlTrackstersDummy3"    , ""                 , "TICL" ),
+    #cms.InputTag("ticlTrackstersEM1"       , ""                 , "TICL" ),
+    #cms.InputTag("ticlTrackstersEM2"       , ""                 , "TICL" ),
     cms.InputTag("ticlTrackstersEM3"       , ""                 , "TICL" ),
-    cms.InputTag("ticlTrackstersHAD1"      , ""                 , "TICL" ),
-    cms.InputTag("ticlTrackstersHAD2"      , ""                 , "TICL" ),
-    cms.InputTag("ticlTrackstersHAD3"      , ""                 , "TICL" ),
-    cms.InputTag("ticlTrackstersTRK1"      , ""                 , "TICL" ),
-    cms.InputTag("ticlTrackstersTRK2"      , ""                 , "TICL" ),
-    cms.InputTag("ticlTrackstersTRK3"      , ""                 , "TICL" ),
-    cms.InputTag("ticlTrackstersTrkEM"     , ""                 , "TICL" ),
-    cms.InputTag("ticlTrackstersEM"        , ""                 , "TICL" ),
-    cms.InputTag("ticlTrackstersTrk"       , ""                 , "TICL" ),
-    cms.InputTag("ticlTrackstersHAD"       , ""                 , "TICL" ),
+    #cms.InputTag("ticlTrackstersHAD1"      , ""                 , "TICL" ),
+    #cms.InputTag("ticlTrackstersHAD2"      , ""                 , "TICL" ),
+    #cms.InputTag("ticlTrackstersHAD3"      , ""                 , "TICL" ),
+    #cms.InputTag("ticlTrackstersTRK1"      , ""                 , "TICL" ),
+    #cms.InputTag("ticlTrackstersTRK2"      , ""                 , "TICL" ),
+    #cms.InputTag("ticlTrackstersTRK3"      , ""                 , "TICL" ),
+    #cms.InputTag("ticlTrackstersTrkEM"     , ""                 , "TICL" ),
+    #cms.InputTag("ticlTrackstersEM"        , ""                 , "TICL" ),
+    #cms.InputTag("ticlTrackstersTrk"       , ""                 , "TICL" ),
+    #cms.InputTag("ticlTrackstersHAD"       , ""                 , "TICL" ),
     cms.InputTag("ticlSimTracksters"       , ""                 , "TICL" )
 )
 process.ticlTree.iterTypeVec = cms.vstring(
-    "Dummy1","Dummy2","Dummy3",
-    "EM1","EM2","EM3",
-    "HAD1","HAD2","HAD3",
-    "TRK1","TRK2","TRK3",
-    "TrkEM","EM","Trk","HAD",
+    #"Dummy1","Dummy2","Dummy3",
+    #"EM1","EM2","EM3",
+    "EM3",
+    #"HAD1","HAD2","HAD3",
+    #"TRK1","TRK2","TRK3",
+    #"TrkEM","EM","Trk","HAD",
     "Sim"
 )
 
