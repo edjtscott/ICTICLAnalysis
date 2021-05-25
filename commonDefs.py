@@ -1,6 +1,6 @@
 from os import system
 
-def run(cmd, dry=False):
+def run(cmd, dry=True):
     print cmd
     if not dry: system(cmd)
 
